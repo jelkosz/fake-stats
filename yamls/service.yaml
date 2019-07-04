@@ -1,0 +1,20 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: fake-stats
+  namespace: openshift-monitoring
+  labels:
+    k8s-app: fake-stats
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 9100
+      targetPort: 9100
+  selector:
+    app: fake-stats
+  clusterIP: None
+  type: ClusterIP
+  sessionAffinity: None
+status:
+  loadBalancer: {}

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fake-stats
+  labels:
+    app: fake-stats
+  namespace: openshift-monitoring
+spec:
+  containers:
+    - name: fake-stats
+      image: jelkosz/fake-stats
+      ports:
+        - containerPort: 8080
+
